@@ -1,3 +1,5 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 #jQuery HTML5 Uploader
 
 jQuery HTML5 Uploader is a lightweight [jQuery plugin](http://plugins.jquery.com/) that lets you to quickly add an upload system [a-la-Gmail](http://googlesystem.blogspot.co.uk/2010/04/drag-and-drop-gmail-attachments.html) into your web app.
