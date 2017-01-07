@@ -32,9 +32,15 @@ $(function() {
 	});
 });
 </script>
+<style> .hover { background-color: teal; } </style>
 <div id="dropbox"></div>
 <input id="multiple" type="file" multiple>
 <input type="hidden" id="hidden_src_url">
+<pre id="dropzone">
+****************************
+* Drop a picture file here *
+****************************
+</pre>
 <img id="drop_receiver">
 ```
 
