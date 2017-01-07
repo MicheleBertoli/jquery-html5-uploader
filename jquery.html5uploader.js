@@ -7,6 +7,7 @@
         var dashes = "--";
 
         var settings = {
+            "b64": null,
             "name": "uploadedFile",
             "postUrl": "Upload.aspx",
             "onClientAbort": null,
@@ -72,6 +73,9 @@
                 }
             };
             fileReader.onload = function (e) {
+                if (settings.b64) {
+                    settings.b64(fileReader.result);
+                };
                 if (settings.onClientLoad) {
                     settings.onClientLoad(e, file);
                 }
@@ -93,6 +97,8 @@
             };
             fileReader.readAsDataURL(file);
 
+            if(!settings.postUrl) return;
+            
             var xmlHttpRequest = new XMLHttpRequest();
             xmlHttpRequest.upload.onabort = function (e) {
                 if (settings.onServerAbort) {
