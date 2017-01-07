@@ -23,16 +23,32 @@ $(function() {
 		name: "foo",
 		postUrl: "bar.aspx"	
 	});
+	$("#dropzone").html5Uploader({
+		postUrl: null,
+		b64: function(srcUrl){
+		     document.getElementById('drop_receiver').src(srcUrl);
+		     $('#hidden_src_url').val(srcUrl);
+		}
+	});
 });
 </script>
+<style> .hover { background-color: teal; } </style>
 <div id="dropbox"></div>
 <input id="multiple" type="file" multiple>
+<input type="hidden" id="hidden_src_url">
+<pre id="dropzone">
+****************************
+* Drop a picture file here *
+****************************
+</pre>
+<img id="drop_receiver">
 ```
 
 #Settings
 
+- `b64`: function that takes a data url of the dropped image as argument.
 - `name`: upload field identifier.
-- `postUrl`: the url to post the file data.
+- `postUrl`: the url to post the file data. Set to null to not upload.
 - `onClientAbort`: Called when the read operation is aborted.
 - `onClientError`: Called when an error occurs.
 - `onClientLoad`: Called when the read operation is successfully completed.
